@@ -1,0 +1,8 @@
+{
+	"node": true,
+	"esversion": 6,
+	"eqeqeq": false,
+	"eqnull": true,
+	"sub": true,
+	"mocha": true
+}
