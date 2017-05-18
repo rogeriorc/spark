@@ -11,21 +11,30 @@ describe('spark', function() {
 	this.timeout(10000);
 
 	before(function() {
-		return spark.start()
-			.then(() => spark.generate());
+		return spark.start();
 	});
 
 	after(function() {
 		return spark.stop();
 	});
 
+	describe('generate files', function() {
+		spark.files.forEach(function(file) {
+			it(file, function() {
+				return spark.generate(file);
+			});
+		});
+	});
+
 	describe('compile files', function() {
 		spark.files.forEach(function(file) {
 			it(file, function() {
-				return spark.compile(file)
-					.catch((err) => {
-						console.error(err);
-					});
+				return spark.compile(file);
+				/*
+				.catch((err) => {
+					console.error(err);
+				});
+				*/
 			});
 		});
 	});

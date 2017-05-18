@@ -53,8 +53,12 @@ class Spark {
 		return this.appserver.stop();
 	}
 
-	generate() {
-		shelljs.cp('-Rf', path.join(ABL_SRC_DIR, '*.*'), GENERATED_SRC_DIR);
+	generate(filename) {
+		var from = path.join(ABL_SRC_DIR, filename),
+			to = path.join(GENERATED_SRC_DIR, filename);
+
+		//TODO: Chamar o parser
+		shelljs.cp('-Rf', from, to);
 
 		return Q();
 	}
