@@ -42,7 +42,18 @@ describe('spark', function() {
 	describe('run and compare results', function() {
 		spark.files.forEach(function(file) {
 			it(file, function() {
+				//console.log(file);
 
+				return Q.spread([
+					spark.runAbl(file),
+					spark.runAdvpl(file)
+				], function(ablResult, advplResult) {
+					console.log('\nablResult:\n\t' + ablResult);
+					console.log('\nadvplResult:\n\t' + advplResult);
+
+
+					expect(ablResult).to.equal(advplResult);
+				});
 			});
 		});
 

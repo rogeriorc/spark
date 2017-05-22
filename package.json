@@ -13,7 +13,8 @@
     "mocha": "^3.4.1",
     "q": "^1.5.0",
     "shelljs": "^0.7.7",
-    "totvs-platform-helper": "^1.0.4"
+    "totvs-platform-helper": "^1.0.4",
+    "totvstec-tools": "^1.0.7"
   },
   "scripts": {
     "test": "mocha ./spec/spark.js"

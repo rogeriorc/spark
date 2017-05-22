@@ -1,0 +1,16 @@
+DEF VAR c AS CHAR.
+DEF VAR i AS INT.
+/*
+c = SESSION:PARAMETER.
+
+REPEAT i = 1 TO NUM-ENTRIES(c):
+   DISPLAY  CAPS( ENTRY(i, c) ).
+END.
+*/
+
+	c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".
+
+   MESSAGE CAPS( c ).
+
+PAUSE.
+QUIT.
