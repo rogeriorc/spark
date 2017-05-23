@@ -149,6 +149,18 @@ class Spark {
 			}
 		})
 			.then(() => {
+				//console.log(this.appserver.stdout.replace(/\n/igm, '\\n').replace(/\r/igm, '\\r'));
+
+				var out = this.appserver.stdout;
+
+				out = out.replace(/\r?\n/igm, '\n');
+				out = out.replace(/\n{0,2}\[INFO \]\[SERVER\].*\n/igm, '');
+//(\r?\n){0,2}
+				//console.log("'" + out + "'");
+
+				return out;
+/*
+
 				var out = this.appserver.stdout.replace(/\r\n/igm, '\n');
 				var lines = out.split('\n');
 				lines.pop();
@@ -158,6 +170,7 @@ class Spark {
 				lines.shift();
 
 				return lines.join('\n');
+				*/
 			})
 			.catch((error) => console.error(error));
 		//return Q("xyz");
