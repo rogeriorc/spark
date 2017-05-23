@@ -132,7 +132,8 @@ class Spark {
 		}
 
 		return spawn(command, args, options)
-			.then((result) => result.replace(/\r\n/igm, '\n'));
+			.then((result) => result.replace(/\r\n/igm, '\n'))
+			.catch((error) => console.error(error));
 	}
 
 	runAdvpl(file, extraArgs) {
@@ -157,7 +158,8 @@ class Spark {
 				lines.shift();
 
 				return lines.join('\n');
-			});
+			})
+			.catch((error) => console.error(error));
 		//return Q("xyz");
 	}
 

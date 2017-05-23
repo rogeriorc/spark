@@ -1,0 +1,6 @@
+DEF VAR c AS CHAR.
+c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".
+
+MESSAGE LC( c ).
+
+QUIT.
