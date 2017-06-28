@@ -18,5 +18,9 @@
   },
   "scripts": {
     "test": "mocha ./spec/spark.js"
+  },
+  "private": true,
+  "publishConfig": {
+    "registry" : "http://code.totvs.com:8081/repository/npm-totvs/"
   }
 }
